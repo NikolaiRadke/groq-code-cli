@@ -15,7 +15,7 @@ npm install -g github:NikolaiRadke/groq-code-cli
 
 Or build from source:
 ```bash
-git clone https://github.com/DEIN-USERNAME/groq-code-cli.git
+git clone https://github.com/NikolaiRadke/groq-code-cli.git
 cd groq-code-cli
 npm install
 npm run build
