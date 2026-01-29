@@ -79,7 +79,64 @@ program
   .option('-s, --system <message>', 'Custom system message')
   .option('-d, --debug', 'Enable debug logging to debug-agent.log in current directory')
   .option('-p, --proxy <url>', 'Proxy URL (e.g. http://proxy:8080 or socks5://proxy:1080)')
+  .option('-n, --non-interactive <prompt>', 'Run in non-interactive mode with prompt')
   .action(async (options) => {
+    // Non-interactive mode
+    if (options.nonInteractive) {
+      try {
+        // Create agent
+        const agent = await Agent.create(
+          'moonshotai/kimi-k2-instruct',
+          options.temperature,
+          options.system || null,
+          options.debug,
+          options.proxy
+        );
+
+        // If no system prompt OR system prompt doesn't restrict editing
+        if (!options.system || options.system.indexOf('MUST NOT edit') === -1) {
+            agent.setSessionAutoApprove(true);
+        }
+        
+        // Capture output
+        let output = '';
+        
+        // The agent has these callback properties from the interface we saw:
+        // @ts-ignore - accessing private property
+        agent.onFinalMessage = (content: string) => {
+          output = content;
+        };
+        
+        // @ts-ignore
+        agent.onThinkingText = (content: string) => {
+          // Ignore thinking, only get final
+        };
+        
+        // Send message
+        await agent.chat(options.nonInteractive);
+        
+        // Output result
+        if (output) {
+          console.log(output);
+        } else {
+          // Fallback: try to get messages directly
+          // @ts-ignore
+          const messages = agent.messages || [];
+          const lastAssistant = messages.filter((m: any) => m.role === 'assistant').pop();
+          if (lastAssistant) {
+            console.log(lastAssistant.content);
+          }
+        }
+        
+        process.exit(0);
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        console.log(chalk.red(`Error: ${errorMessage}`));
+        process.exit(1);
+      }
+    }
+    
+    // Interactive mode
     await startChat(
       options.temperature,
       options.system || null,
