@@ -37,7 +37,7 @@ groq --system "Read-only assistant" --non-interactive "Analyze the project"
 
 ## Use Cases
 
-- **IDE Integration**: Works with VS Code extensions like [AI.duino](https://github.com/roboter/AI.duino)
+- **IDE Integration**: Works with VS Code extensions like [AI.duino](https://github.com/NikolaiRadke/AI.duino)
 - **CI/CD Pipelines**: Automated code analysis and generation
 - **Batch Processing**: Process multiple files without manual interaction
 
