@@ -53,15 +53,3 @@ Based on the excellent [Groq Code CLI](https://github.com/build-with-groq/groq-c
 
 Same as original (check their license)
 Re-run `npm run build` and `npm link`.
-
-
-## Contributing and Support
-
-Improvements through PRs are welcome!
-
-For issues and feature requests, please open an issue on GitHub.
-
-#### Share what you create with Groq on our [socials](https://x.com/GroqInc)!
-
-### Featured Community Creations
-- [OpenRouter Support](https://github.com/rahulvrane/groq-code-cli-openrouter) - rahulvrane
