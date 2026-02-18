@@ -13,7 +13,6 @@
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"test": "ava",
-        "postinstall": "chmod +x dist/core/cli.js"
 	},
 	"files": [
 		"dist"
