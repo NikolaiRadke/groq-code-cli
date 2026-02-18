@@ -1,0 +1,1 @@
+{"version":3,"file":"clear.js","sourceRoot":"","sources":["../../../src/commands/definitions/clear.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,YAAY,GAAsB;IAC7C,OAAO,EAAE,OAAO;IAChB,WAAW,EAAE,gCAAgC;IAC7C,OAAO,EAAE,CAAC,EAAE,UAAU,EAAE,YAAY,EAAkB,EAAE,EAAE;QACxD,YAAY,EAAE,CAAC;QACf,UAAU,CAAC;YACT,IAAI,EAAE,QAAQ;YACd,OAAO,EAAE,mCAAmC;SAC7C,CAAC,CAAC;IACL,CAAC;CACF,CAAC"}

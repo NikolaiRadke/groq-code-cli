@@ -10,7 +10,6 @@
 		"node": ">=16"
 	},
 	"scripts": {
-        "prepare": "tsc",
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"test": "ava"

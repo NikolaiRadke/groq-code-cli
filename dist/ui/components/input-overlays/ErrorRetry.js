@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Box, Text } from 'ink';
+export default function ErrorRetry({ error, onRetry, onCancel }) {
+    return (_jsxs(Box, { flexDirection: "column", borderStyle: "round", borderColor: "red", paddingX: 1, paddingY: 1, children: [_jsx(Box, { marginBottom: 1, children: _jsx(Text, { color: "red", bold: true, children: "\u274C An error occurred:" }) }), _jsx(Box, { marginBottom: 2, flexWrap: "wrap", children: _jsx(Text, { color: "red", children: error }) }), _jsxs(Box, { justifyContent: "space-between", children: [_jsxs(Box, { children: [_jsx(Text, { color: "green", bold: true, children: "[R]etry" }), _jsx(Text, { color: "gray", children: " - Try the request again" })] }), _jsxs(Box, { children: [_jsx(Text, { color: "red", bold: true, children: "[C]ancel" }), _jsx(Text, { color: "gray", children: " - Stop and return to input" })] })] }), _jsx(Box, { marginTop: 1, children: _jsx(Text, { color: "gray", dimColor: true, children: "Press R to retry or C to cancel" }) })] }));
+}
+//# sourceMappingURL=ErrorRetry.js.map
