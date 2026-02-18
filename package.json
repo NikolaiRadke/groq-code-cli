@@ -12,7 +12,8 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"test": "ava"
+		"test": "ava",
+        "postinstall": "chmod +x dist/core/cli.js"
 	},
 	"files": [
 		"dist"
