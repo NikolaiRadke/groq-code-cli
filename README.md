@@ -10,11 +10,6 @@ Fork of [groq-code-cli](https://github.com/build-with-groq/groq-code-cli) with *
 
 ## Installation
 ```bash
-npm install -g github:NikolaiRadke/groq-code-cli
-```
-
-Or build from source:
-```bash
 git clone https://github.com/NikolaiRadke/groq-code-cli.git
 cd groq-code-cli
 npm install
