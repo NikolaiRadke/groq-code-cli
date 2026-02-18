@@ -12,7 +12,7 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"test": "ava",
+		"test": "ava"
 	},
 	"files": [
 		"dist"
