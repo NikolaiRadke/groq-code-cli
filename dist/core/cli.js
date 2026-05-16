@@ -75,7 +75,8 @@ program
     if (options.nonInteractive) {
         try {
             // Create agent
-            const agent = await Agent.create('moonshotai/kimi-k2-instruct', options.temperature, options.system || null, options.debug, options.proxy);
+            const NON_INTERACTIVE_DEFAULT_SYSTEM = 'You are a helpful assistant. Answer directly and concisely. Only use tools when the task explicitly requires reading or writing files.';
+            const agent = await Agent.create('llama-3.3-70b-versatile', options.temperature, options.system || NON_INTERACTIVE_DEFAULT_SYSTEM, options.debug, options.proxy);
             // If no system prompt OR system prompt doesn't restrict editing
             if (!options.system || options.system.indexOf('MUST NOT edit') === -1) {
                 agent.setSessionAutoApprove(true);
