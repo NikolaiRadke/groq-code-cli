@@ -85,10 +85,12 @@ program
     if (options.nonInteractive) {
       try {
         // Create agent
+        const NON_INTERACTIVE_DEFAULT_SYSTEM = 'You are a helpful assistant. Answer directly and concisely. Only use tools when the task explicitly requires reading or writing files.';
+
         const agent = await Agent.create(
-          'moonshotai/kimi-k2-instruct',
+          'openai/gpt-oss-120b',
           options.temperature,
-          options.system || null,
+          options.system || NON_INTERACTIVE_DEFAULT_SYSTEM,
           options.debug,
           options.proxy
         );
